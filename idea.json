@@ -1,208 +1,132 @@
 {
-  "G1E1MC_S9_Ordinal numbers.pptx": {
-    "learning_outcomes": [
-      "Identify and use ordinal numbers from 1st to 10th.",
-      "Understand the context and application of ordinal numbers in real-life scenarios.",
-      "Differentiate between driving experiences on a road versus a race track.",
-      "Recognize the importance of following traffic rules."
-    ],
-    "content_structure": [
-      {
-        "title": "Introduction to Ordinal Numbers",
-        "sub": [
-          "Definition of Ordinal Numbers",
-          "Ordinal Numbers 1-10",
-          "Uses of Ordinal Numbers"
-        ]
-      },
-      {
-        "title": "Practical Applications",
-        "sub": [
-          "Identifying positions in a race",
-          "Examples of ordinal numbers in sentences",
-          "Creating a calendar using ordinal numbers"
-        ]
-      },
-      {
-        "title": "Driving Contexts",
-        "sub": [
-          "Driving on a road vs. driving on a race track",
-          "Traffic rules and their importance",
-          "Consequences of not following traffic rules"
-        ]
-      },
-      {
-        "title": "Interactive Activities",
-        "sub": [
-          "Discussion on race positions",
-          "Red light, green light activity",
-          "Parking cars in the garage exercise"
-        ]
-      },
-      {
-        "title": "Conclusion",
-        "sub": [
-          "Summary of the topic",
-          "Review of key concepts"
-        ]
-      }
-    ]
-  },
-  "G3E3LC_S21_Alternate universe or Wormhole_.pptx": {
-    "learning_outcomes": [
-      "Identify and differentiate between fact and fiction in various scenarios.",
-      "Explain the concepts of wormholes and alternate universes.",
-      "Construct a news report based on fictional events using creative writing skills."
-    ],
-    "content_structure": [
-      "Language Capacity",
-      {
-        "title": "Fact or Fiction",
-        "sub": [
-          "Dragon roared and flew off",
-          "Dog as head chef",
-          "Old woman clicked heels",
-          "Galaxies moving away"
-        ]
-      },
-      {
-        "title": "Entering Diagon Alley",
-        "sub": [
-          "Platform Nine and Three Quarters",
-          {
-            "title": "Discussion Topics",
-            "sub": [
-              "Wormhole",
-              "Alternate universe"
-            ]
-          },
-          {
-            "title": "Video Resources",
-            "sub": [
-              "How many universes are there? - Chris Anderson",
-              "What Is A Wormhole? The Dr. Binocs Show"
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Writing a NEWS Report",
-        "sub": [
-          "Imagine being a muggle at platform nine and three quarters",
-          "Choose a theory: alternate universe or wormhole",
-          "Elements of a news report: catchy headline, article structure"
-        ]
-      }
-    ]
-  },
-  "G4E1CW_S9_Indus valley civilisation.pptx": {
-    "learning_outcomes": [
-      "Identify the key features and cities of the Indus Valley Civilization.",
-      "Explain the significance of the Indus River in the development of the civilization.",
-      "Describe the construction materials and sanitation methods used in Harappan cities.",
-      "Recognize the agricultural practices and social structure of Mohenjo Daro."
-    ],
-    "content_structure": [
-      "Introduction to Indus Valley Civilization",
-      {
-        "title": "Geographical Context",
-        "sub": [
-          "Importance of the Indus River",
-          "Location of Harappa and Mohenjo Daro"
-        ]
-      },
-      {
-        "title": "Key Features of Harappan Cities",
-        "sub": [
-          "Construction Materials",
-          "Sanitation and Drainage Systems",
-          "Agricultural Practices"
-        ]
-      },
-      {
-        "title": "Cultural Aspects",
-        "sub": [
-          "Harappan Pottery",
-          "Indus Script",
-          "Seals and Jewelry"
-        ]
-      },
-      {
-        "title": "Social Structure",
-        "sub": [
-          "Occupations",
-          "Equality in Society"
-        ]
-      },
-      {
-        "title": "Significant Structures",
-        "sub": [
-          "The Great Bath",
-          "Defense Mechanisms"
-        ]
-      },
-      "Interactive Activities",
-      {
-        "title": "Assessment Questions",
-        "sub": [
-          "Multiple Choice Questions",
-          "Matching Features of Mohenjo Daro"
-        ]
-      },
-      "Creative Activity",
-      "Conclusion and Current Day Overview"
-    ]
-  },
-  "G4E2LC_S35_The DNA.pptx": {
-    "learning_outcomes": [
-      "Understand the basic concept of DNA and its significance in forensic science.",
-      "Identify and collect various types of evidence from a crime scene.",
-      "Follow proper procedures for collecting and handling samples.",
-      "Explain the process of DNA profiling and its role in solving crimes."
-    ],
-    "content_structure": [
-      {
-        "title": "Introduction to DNA",
-        "sub": [
-          "What is DNA?",
-          "Importance of DNA in forensic science"
-        ]
-      },
-      {
-        "title": "The Crime Scene",
-        "sub": [
-          "Analyzing the crime scene",
-          "Types of evidence to collect"
-        ]
-      },
-      {
-        "title": "Collecting Samples",
-        "sub": [
-          "Steps for collecting samples",
-          "Proper handling and packaging of evidence"
-        ]
-      },
-      {
-        "title": "DNA Profiling",
-        "sub": [
-          "Understanding DNA fingerprinting",
-          "Matching DNA samples"
-        ]
-      },
-      {
-        "title": "Reporting Findings",
-        "sub": [
-          "Describing the crime scene",
-          "Documenting steps taken to solve the case",
-          "Gathering eyewitness accounts"
-        ]
-      },
-      {
-        "title": "Independent Learning",
-        "sub": [
-          "Exploring related topics through media"
-        ]
-      }
-    ]
-  }
+  "lesson_gamification": [
+    {
+      "title": "Indus Valley Civilisation",
+      "lesson_code": "G4E1CW_S9",
+      "theme": ["History", "Cities", "Daily life", "Inventions"],
+      "games": [
+        {
+          "name": "Quiz Battle (Showdown)",
+          "type": "Quiz",
+          "description": "Timed multiple-choice battle on key facts like twin cities, construction materials, sanitation evidence."
+        },
+        {
+          "name": "Build the City Puzzle",
+          "type": "Puzzle",
+          "description": "Drag-and-drop game to rebuild Mohenjo-Daro with correct features like Great Bath, wells, granaries."
+        },
+        {
+          "name": "Feature Matching Game",
+          "type": "Matching",
+          "description": "Match features like Great Bath, public wells to their descriptions (e.g., ritual bath, equal access)."
+        },
+        {
+          "name": "Doodle It Challenge",
+          "type": "Creative Drawing",
+          "description": "Create and vote on doodles that summarize the civilization’s key elements."
+        },
+        {
+          "name": "Time-Travel Roleplay",
+          "type": "Roleplay",
+          "description": "Pretend to be a citizen of Harappa or Mohenjo-Daro and describe life in the ancient city."
+        }
+      ]
+    },
+    {
+      "title": "Alternate Universe or Wormholes",
+      "lesson_code": "G3E3LC_S21",
+      "theme": ["Sci-Fi", "Language Imagination", "Critical Thinking"],
+      "games": [
+        {
+          "name": "Fact or Fiction Showdown",
+          "type": "Quiz",
+          "description": "Rapid-fire quiz to determine whether a statement is real or fictional."
+        },
+        {
+          "name": "Wormhole vs Alternate Universe Debate",
+          "type": "Discussion",
+          "description": "Students take sides and debate using evidence from videos."
+        },
+        {
+          "name": "Muggle Newsroom Simulation",
+          "type": "Roleplay + Writing",
+          "description": "Write a news report explaining the boys’ disappearance using chosen theory (wormhole or alternate universe)."
+        },
+        {
+          "name": "Scene Creator Challenge",
+          "type": "Drama / Scriptwriting",
+          "description": "Create and act out a scene in a fictional setting explained by wormhole or alternate universe logic."
+        },
+        {
+          "name": "Theory Tag",
+          "type": "Tagging Challenge",
+          "description": "Identify and tag scenarios/statements as belonging to a wormhole or alternate universe explanation."
+        }
+      ]
+    },
+    {
+      "title": "The DNA",
+      "lesson_code": "G4E2LC_S35",
+      "theme": ["Biology", "Forensics", "Investigation"],
+      "games": [
+        {
+          "name": "Solve the Crime Mystery Game",
+          "type": "Simulation",
+          "description": "Investigate a crime scene, collect evidence, perform DNA profiling, and find the culprit."
+        },
+        {
+          "name": "Evidence Hunt Puzzle",
+          "type": "Puzzle",
+          "description": "Identify objects that can provide DNA in a drag-and-drop puzzle."
+        },
+        {
+          "name": "CSI Report Roleplay",
+          "type": "Roleplay + Writing",
+          "description": "Report on the crime scene including quotes, steps taken, and final outcome."
+        },
+        {
+          "name": "DNA Snap Sorter",
+          "type": "Sequence Matching",
+          "description": "Match correct sequence of evidence handling steps using drag-and-drop cards."
+        },
+        {
+          "name": "DNA Clue Trail",
+          "type": "Treasure Hunt",
+          "description": "Stepwise game where clues based on DNA analysis lead to the next clue until culprit is found."
+        }
+      ]
+    },
+    {
+      "title": "Ordinal Numbers",
+      "lesson_code": "G1E1MC_S9",
+      "theme": ["Math", "Position", "Everyday Logic"],
+      "games": [
+        {
+          "name": "Car Race Leaderboard Game",
+          "type": "Simulation",
+          "description": "Race cars shown on screen where students assign correct ordinal positions."
+        },
+        {
+          "name": "Red Light, Green Light",
+          "type": "Live Challenge",
+          "description": "Follow red/green signals while solving ordinal number questions in real-time."
+        },
+        {
+          "name": "Garage Parking Puzzle",
+          "type": "Puzzle",
+          "description": "Drag cars into correct garage slots based on ordinal position from first to tenth."
+        },
+        {
+          "name": "Calendar Creator Activity",
+          "type": "Interactive Task",
+          "description": "Mark and label dates using ordinal numbers in a custom calendar."
+        },
+        {
+          "name": "Race Reporter Roleplay",
+          "type": "Roleplay",
+          "description": "Act as a sports commentator using ordinal numbers to describe race positions."
+        }
+      ]
+    }
+  ]
 }

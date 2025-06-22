@@ -50,10 +50,6 @@ class DNADetectiveGame(BaseGame):
             self._render_dna_basics()
         elif st.session_state.game_phase == "crime_scene":
             self._render_crime_scene()
-        elif st.session_state.game_phase == "evidence_analysis":
-            self._render_evidence_analysis()
-        elif st.session_state.game_phase == "solving_case":
-            self._render_solving_case()
         elif st.session_state.game_phase == "completion":
             self._render_completion()
     
@@ -156,3 +152,113 @@ class DNADetectiveGame(BaseGame):
             if st.button("Go to Crime Scene"):
                 st.session_state.game_phase = "crime_scene"
                 st.experimental_rerun()
+    
+    def _render_crime_scene(self):
+        """Crime scene investigation"""
+        st.markdown("## The Museum Crime Scene")
+        st.markdown(f"""
+        Welcome to the museum, {st.session_state.detective_name}! The valuable ancient DNA exhibit has been stolen.
+        Your task is to collect evidence and solve the case.
+        """)
+        
+        # Simple evidence collection activity
+        st.markdown("### Collect Evidence")
+        st.markdown("Search different areas of the museum to find clues:")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("#### Display Case")
+            if "fingerprints" not in st.session_state.evidence_collected:
+                if st.button("Search Display Case"):
+                    st.markdown("You found fingerprints on the glass! This could contain DNA from the suspect.")
+                    st.session_state.evidence_collected.append("fingerprints")
+                    st.session_state.investigator_points += 10
+                    st.experimental_rerun()
+            else:
+                st.markdown("✓ Fingerprints collected from the display case")
+                
+            if "hair_strand" not in st.session_state.evidence_collected:
+                if st.button("Look Around Display Case"):
+                    st.markdown("You found a hair strand near the display case! This is excellent DNA evidence.")
+                    st.session_state.evidence_collected.append("hair_strand")
+                    st.session_state.investigator_points += 10
+                    st.experimental_rerun()
+            else:
+                st.markdown("✓ Hair strand collected from near the display case")
+        
+        with col2:
+            st.markdown("#### Security Office")
+            if "security_footage" not in st.session_state.evidence_collected:
+                if st.button("Check Security Cameras"):
+                    st.markdown("You found security camera footage showing someone suspicious!")
+                    st.session_state.evidence_collected.append("security_footage")
+                    st.session_state.investigator_points += 10
+                    st.experimental_rerun()
+            else:
+                st.markdown("✓ Security footage collected")
+            
+            if "visitor_log" not in st.session_state.evidence_collected:
+                if st.button("Check Visitor Log"):
+                    st.markdown("You found the museum visitor log with names of everyone who visited today.")
+                    st.session_state.evidence_collected.append("visitor_log")
+                    st.session_state.investigator_points += 10
+                    st.experimental_rerun()
+            else:
+                st.markdown("✓ Visitor log collected")
+        
+        # Evidence collected, ready to solve
+        if len(st.session_state.evidence_collected) >= 3:
+            st.markdown("### Evidence Analysis")
+            st.markdown("You've collected enough evidence to analyze and solve the case!")
+            
+            if st.button("Analyze Evidence and Solve Case"):
+                st.session_state.game_phase = "completion"
+                st.experimental_rerun()
+    
+    def _render_completion(self):
+        """Game completion"""
+        st.markdown("## Case Solved!")
+        st.markdown(f"""
+        Congratulations, {st.session_state.detective_name}! You've successfully solved the case of the missing museum artifact.
+        
+        By analyzing the DNA evidence and other clues you collected, you identified the culprit!
+        The stolen artifact has been recovered and returned to the museum.
+        """)
+        
+        # Display final score
+        st.markdown(f"### Final Score: {st.session_state.investigator_points} points")
+        
+        # Display evidence collected
+        st.markdown("### Evidence Collected:")
+        for evidence in st.session_state.evidence_collected:
+            if evidence == "fingerprints":
+                st.markdown("- Fingerprints from the display case")
+            elif evidence == "hair_strand":
+                st.markdown("- Hair strand with DNA evidence")
+            elif evidence == "security_footage":
+                st.markdown("- Security camera footage")
+            elif evidence == "visitor_log":
+                st.markdown("- Museum visitor log")
+        
+        # Knowledge gained
+        st.markdown("### What You Learned:")
+        for outcome in self.learning_outcomes:
+            st.markdown(f"- {outcome}")
+        
+        # Play again button
+        if st.button("Start New Investigation"):
+            # Reset game state
+            st.session_state.game_phase = "intro"
+            st.session_state.investigator_points = 0
+            st.session_state.evidence_collected = []
+            
+            # Reset quiz state
+            if "dna_questions" in st.session_state:
+                del st.session_state.dna_questions
+            if "current_dna_question" in st.session_state:
+                del st.session_state.current_dna_question
+            if "dna_score" in st.session_state:
+                del st.session_state.dna_score
+            
+            st.experimental_rerun()
