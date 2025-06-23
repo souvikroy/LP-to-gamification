@@ -1,6 +1,7 @@
 import streamlit as st
 from typing import Dict, Any, List
 import random
+import os
 from .base_game import BaseGame
 
 class IndusValleyAdventureGame(BaseGame):
@@ -24,18 +25,30 @@ class IndusValleyAdventureGame(BaseGame):
         if "artifacts_collected" not in st.session_state:
             st.session_state.artifacts_collected = []
             
-        # Create the AI guide using LangChain
-        self.guide_chain = self.create_llm_chain(
-            """You are an archaeological expert named Dr. Sharma, guiding students through the ancient 
-            Indus Valley Civilization. Answer the student's question about the Indus Valley.
-
-            Student's Question: {question}
+        if "guide_answers" not in st.session_state:
+            st.session_state.guide_answers = {}
+        
+        # Ensure OpenAI API key is set
+        if not os.getenv("OPENAI_API_KEY"):
+            st.error("OpenAI API key not found. Please set it in the .env file.")
+            return
             
-            Provide a helpful, educational response in 2-3 sentences. Be engaging but factually accurate.
-            Focus on helping the student understand the Indus Valley Civilization better.
-            """,
-            "answer"
-        )
+        # Create the AI guide using LangChain
+        try:
+            self.guide_chain = self.create_llm_chain(
+                """You are an archaeological expert named Dr. Sharma, guiding students through the ancient 
+                Indus Valley Civilization. Answer the student's question about the Indus Valley.
+    
+                Student's Question: {question}
+                
+                Provide a helpful, educational response in 2-3 sentences. Be engaging but factually accurate.
+                Focus on helping the student understand the Indus Valley Civilization better.
+                """,
+                "answer"
+            )
+        except Exception as e:
+            st.error(f"Error initializing language model: {e}")
+            self.guide_chain = None
     
     def render(self):
         """Render the game UI"""
@@ -43,6 +56,11 @@ class IndusValleyAdventureGame(BaseGame):
         st.sidebar.markdown(f"### Explorer Stats")
         st.sidebar.markdown(f"Knowledge Points: {st.session_state.knowledge_points}")
         st.sidebar.markdown(f"Artifacts: {len(st.session_state.artifacts_collected)}/6")
+        
+        # Add Ask Dr. Sharma to sidebar on all screens except intro (where it's in the main content)
+        if st.session_state.game_stage != "intro":
+            with st.sidebar.expander("💬 Ask Dr. Sharma a question"):
+                self._render_ask_dr_sharma()
         
         # Game stages
         if st.session_state.game_stage == "intro":
